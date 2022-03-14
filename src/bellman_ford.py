@@ -3,11 +3,11 @@ import numpy as np
 def bf_negative_cycle(graph):
     """
     Description
-    ---------
+    -------
     Get the shortest path using the Bellman-Ford algorithm.
 
     Parameters
-    ----------
+    -------
     G : Networkx DiGraph
         The input graph.
 
@@ -17,9 +17,9 @@ def bf_negative_cycle(graph):
         A list with the shortest path.
 
     References
-    https://en.wikipedia.org/wiki/Bellman–Ford_algorithm
     -------
-
+    https://en.wikipedia.org/wiki/Bellman–Ford_algorithm
+    https://nbviewer.org/github/rcroessmann/sharing_public/blob/master/arbitrage_identification.ipynb
     """
 
     # Remove nan edges
