@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to Bellman Ford Method’s documentation! &#8212; Testsphinx 16/03/22 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Testsphinx 16/03/22 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to Bellman Ford Method’s documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-bellman-ford-method-s-documentation">
+<h1>Welcome to Bellman Ford Method’s documentation!<a class="headerlink" href="#welcome-to-bellman-ford-method-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Bellman Ford algorithm helps us find the shortest path from a vertex to all other vertices of a weighted graph.</strong></p>
+<p>The Bellman-Ford algorithm provides the shortest distance from a prespecified origin node to all other nodes in the graph (weighted digraph). It is able to handle graphs where some of the edge weights are negative numbers. The based idea is: show if there is a negative cycle, generate a negative cycle and always find a negative cycle (if there is one) even if the graph is not connected.</p>
+<section id="bellman-ford-s-algorithm-applications">
+<h2>Bellman Ford’s Algorithm Applications<a class="headerlink" href="#bellman-ford-s-algorithm-applications" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>For calculating shortest paths in routing algorithms</p></li>
+<li><p>For finding the shortest path</p></li>
+</ol>
+</section>
+<section id="how-bellman-ford-s-algorithm-works">
+<h2>How Bellman Ford’s Algorithm Works<a class="headerlink" href="#how-bellman-ford-s-algorithm-works" title="Permalink to this headline">¶</a></h2>
+<p>Bellman Ford algorithm works by overestimating the length of the path from the starting vertex to all other vertices. Then it iteratively relaxes those estimates by finding new paths that are shorter than the previously overestimated paths.
+By doing this repeatedly for all vertices, we can guarantee that the result is <em>optimized</em>.</p>
+</section>
+<section id="bellman-ford-pseudocode-reference">
+<h2>Bellman Ford Pseudocode [<a class="reference external" href="https://www.programiz.com/dsa/bellman-ford-algorithm">reference</a>]<a class="headerlink" href="#bellman-ford-pseudocode-reference" title="Permalink to this headline">¶</a></h2>
+<p>We need to maintain the path distance of every vertex. We can store that in an array of size v, where v is the number of vertices.</p>
+<p>We also want to be able to get the shortest path, not only know the length of the shortest path. For this, we map each vertex to the vertex that last updated its path length.</p>
+<p>Once the algorithm is over, we can backtrack from the destination vertex to the source vertex to find the path.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">function</span> <span class="n">bellmanFord</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">each</span> <span class="n">vertex</span> <span class="n">V</span> <span class="ow">in</span> <span class="n">G</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">infinite</span>
+      <span class="n">previous</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">NULL</span>
+  <span class="n">distance</span><span class="p">[</span><span class="n">S</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="mi">0</span>
+
+  <span class="k">for</span> <span class="n">each</span> <span class="n">vertex</span> <span class="n">V</span> <span class="ow">in</span> <span class="n">G</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">edge</span> <span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span>
+      <span class="n">tempDistance</span> <span class="o">&lt;-</span> <span class="n">distance</span><span class="p">[</span><span class="n">U</span><span class="p">]</span> <span class="o">+</span> <span class="n">edge_weight</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">tempDistance</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">V</span><span class="p">]</span>
+        <span class="n">distance</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">tempDistance</span>
+        <span class="n">previous</span><span class="p">[</span><span class="n">V</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">U</span>
+
+  <span class="k">for</span> <span class="n">each</span> <span class="n">edge</span> <span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">V</span><span class="p">)</span> <span class="ow">in</span> <span class="n">G</span>
+    <span class="n">If</span> <span class="n">distance</span><span class="p">[</span><span class="n">U</span><span class="p">]</span> <span class="o">+</span> <span class="n">edge_weight</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">distance</span><span class="p">[</span><span class="n">V</span><span class="p">}</span>
+      <span class="n">Error</span><span class="p">:</span> <span class="n">Negative</span> <span class="n">Cycle</span> <span class="n">Exists</span>
+
+  <span class="k">return</span> <span class="n">distance</span><span class="p">[],</span> <span class="n">previous</span><span class="p">[]</span>
+</pre></div>
+</div>
+</section>
+<section id="function">
+<h2>Function<a class="headerlink" href="#function" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="bf_negative_cycle">
+<span class="sig-name descname"><span class="pre">bf_negative_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bf_negative_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator that represents the shortest distance cycle in the graph. The input parameter must be the <em>negative logarithm</em> of the distance matrix as a DiGraph object, for example, <a class="reference external" href="https://networkx.org/">networkx</a>.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">graph</dt>
+<dd class="field-odd"><p>Negative logarithm of distances between nodes as a DiGraph object.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">For example</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Bellman Ford Algorithm</span>
+   <span class="kn">from</span> <span class="nn">bellman_ford</span> <span class="kn">import</span> <span class="n">bf_negative_cycle</span>
+   <span class="c1">#Digraph object</span>
+   <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+   <span class="c1">#Negative log matrix as graph</span>
+   <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+   <span class="n">G</span><span class="o">.</span><span class="n">add_weighted_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/graph.png"><img alt="_images/graph.png" src="_images/graph.png" style="width: 393.0px; height: 284.0px;" /></a>
+</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Apply BF algorithm</span>
+<span class="n">bf_negative_cycle</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output of the program is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/bf.png"><img alt="_images/bf.png" src="_images/bf.png" style="width: 408.0px; height: 280.0px;" /></a>
+</figure>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install bellman_ford, simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">bellman_ford</span>
+</pre></div>
+</div>
+<p>If you encounter a bug or would like to participate in the further development of this package come find us on Github.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Bellman Ford Method’s documentation!</a><ul>
+<li><a class="reference internal" href="#bellman-ford-s-algorithm-applications">Bellman Ford’s Algorithm Applications</a></li>
+<li><a class="reference internal" href="#how-bellman-ford-s-algorithm-works">How Bellman Ford’s Algorithm Works</a></li>
+<li><a class="reference internal" href="#bellman-ford-pseudocode-reference">Bellman Ford Pseudocode [reference]</a></li>
+<li><a class="reference internal" href="#function">Function</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">Testsphinx 16/03/22 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to Bellman Ford Method’s documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Paulina.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>
