@@ -13,5 +13,8 @@ setuptools.setup(
     url="https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo",
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
+    install_requires=[
+        'numpy>=1.22.0'
+        ],
     python_requires=">=3.9.5",
 )
