@@ -48,7 +48,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 **Joel Jaramillo Pacehco:**
 
 
-**Aide Jazmín González Cruz:**
+**Aide Jazmín González Cruz:** Investigación de algunas formas de evaluar el correcto funcionamiento del médtodo de Bellman Ford, elaboración de las pruebas unitarias y creaciónn del yaml para correr estos test de forma automática al hacer push sobre el proyecto.
 
 
 
