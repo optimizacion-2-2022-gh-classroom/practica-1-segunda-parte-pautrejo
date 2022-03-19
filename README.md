@@ -35,14 +35,14 @@ Resolvimos los siguientes *issues*
  
 ### Equipo
  
-Nos reunimos para elegir el proyecto entre los que se habían trabajado y se seleccionó el método númerico a implementar, Así mismo, se dividieron las tareas a realizar.
+Nos reunimos para elegir el proyecto entre los que se habían trabajado y se seleccionó el método númerico a implementar. Así mismo, se dividieron las tareas a realizar.
 
 ### Individual
 
 **Jesús Enrique Miranda Blanco:**
 
 
-**Nyrma Paulina Hernández Trejo:**
+**Nyrma Paulina Hernández Trejo:** documentación del paquete realizado en Sphinx y publicado con Github Pages.
 
 
 **Joel Jaramillo Pacehco:**
@@ -53,6 +53,8 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 
 # Descripción de archivos:
+
+* Documentación: [Welcome to Bellman Ford Method’s documentation!] (https://optimizacion-2-2022-gh-classroom.github.io/practica-1-segunda-parte-pautrejo/html/index.html)
   
 
 # Referencias:
