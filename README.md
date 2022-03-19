@@ -54,7 +54,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 # Descripción de archivos:
 
-* Documentación: [Welcome to Bellman Ford Method’s documentation!] (https://optimizacion-2-2022-gh-classroom.github.io/practica-1-segunda-parte-pautrejo/html/index.html)
+* Documentación: [Welcome to Bellman Ford Method’s documentation!](https://optimizacion-2-2022-gh-classroom.github.io/practica-1-segunda-parte-pautrejo/html/index.html)
   
 
 # Referencias:
