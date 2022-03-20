@@ -108,6 +108,6 @@ To install bellman_ford, simply run:
 
 .. code-block::
 
-       pip install bellman_ford
+       pip install git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo
 
 If you encounter a bug or would like to participate in the further development of this package come find us on Github.
