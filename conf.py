@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Bellman Ford Method'
-copyright = '2022'
+copyright = '2022, Paulina, Aide, Joel, Enrique'
 author = 'Paulina, Aide, Joel, Enrique'
 
 # The full version, including alpha/beta/rc tags
