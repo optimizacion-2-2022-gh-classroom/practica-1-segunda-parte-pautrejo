@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/main) 
 
 # **Parte 2 para la práctica 1 del curso de Optimización 2 2021-1: implementación de método numérico para resolver problemas de optimización convexa.**
 
@@ -45,7 +45,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 **Nyrma Paulina Hernández Trejo:** documentación del paquete realizado en Sphinx y publicado con Github Pages.
 
 
-**Joel Jaramillo Pacehco:**
+**Joel Jaramillo Pacehco:** Investigar cómo se agrega un boton de binder y su implementación en este repositorio, creación del dockerfile y la imagen correspondiente
 
 
 **Aide Jazmín González Cruz:** Investigación de algunas formas de evaluar el correcto funcionamiento del médtodo de Bellman Ford, elaboración de las pruebas unitarias y creaciónn del yaml para correr estos test de forma automática al hacer push sobre el proyecto.
@@ -55,6 +55,14 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 # Descripción de archivos:
 
 * Documentación: [Welcome to Bellman Ford Method’s documentation!](https://optimizacion-2-2022-gh-classroom.github.io/practica-1-segunda-parte-pautrejo/html/index.html)
+
+# Comando de docker
+
+* docker run --rm -v <ruta a mi directorio>:/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
+ 
+Después de correr la imagen de docker en su computadora, podrá acceder el jupiterlab a través de un browser mediante http://localhost:8888
+
+
   
 
 # Referencias:
@@ -63,4 +71,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 * [Crypto Trading and Arbitrage Identification Strategies](https://nbviewer.org/github/rcroessmann/sharing_public/blob/master/arbitrage_identification.ipynb)
 * [Video Dokerfile: example-docker-image-build-and-push](https://www.youtube.com/watch?v=wv7JGstFgrU&feature=youtu.be)
 * [Dokerfile curso](https://github.com/palmoreck/dockerfiles/blob/master/jupyterlab/optimizacion_2/3.2.8/Dockerfile)
+* [Video Get started with Binder] (https://www.youtube.com/watch?v=owSGVOov9pQ)
+* [ How to share a Jupyter notebook with Binder? ] (https://mybinder.readthedocs.io/en/latest/introduction.html)
 
+ 
