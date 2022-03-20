@@ -39,10 +39,10 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 ### Individual
 
-**Jesús Enrique Miranda Blanco:**
+**Jesús Enrique Miranda Blanco:** Implementación del método numérico y creación del paquete que implementa el método.
 
 
-**Nyrma Paulina Hernández Trejo:** documentación del paquete realizado en Sphinx y publicado con Github Pages.
+**Nyrma Paulina Hernández Trejo:** Documentación del paquete realizado en Sphinx y publicado con Github Pages.
 
 
 **Joel Jaramillo Pacehco:** Investigar cómo se agrega un boton de binder y su implementación en este repositorio, creación del dockerfile y la imagen correspondiente
@@ -73,5 +73,4 @@ Después de correr la imagen de docker en su computadora, podrá acceder el jupi
 * [Dokerfile curso](https://github.com/palmoreck/dockerfiles/blob/master/jupyterlab/optimizacion_2/3.2.8/Dockerfile)
 * [Video Get started with Binder] (https://www.youtube.com/watch?v=owSGVOov9pQ)
 * [ How to share a Jupyter notebook with Binder? ] (https://mybinder.readthedocs.io/en/latest/introduction.html)
-
- 
+* [Pseudo código](https://www.simplilearn.com/tutorials/data-structure-tutorial/bellman-ford-algorithm)
