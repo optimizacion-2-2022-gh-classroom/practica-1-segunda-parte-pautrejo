@@ -1,6 +1,6 @@
 import numpy as np 
 
-def bf_negative_cycle(graph):
+def bellman_ford(graph):
     """
     Description
     -------
@@ -22,27 +22,27 @@ def bf_negative_cycle(graph):
     https://nbviewer.org/github/rcroessmann/sharing_public/blob/master/arbitrage_identification.ipynb
     """
 
+    n_nodes = len(graph.nodes())
+    n = n_nodes + 1
     # Remove nan edges
-    n = len(graph.nodes()) + 1
     edges = [edge for edge in graph.edges().data() if ~np.isnan(edge[2]['weight'])]
 
     # Add a starting node and add edges with zero weight to all other nodes
-    start_node_edges = [(n-1, i, {'weight': 0}) for i in range(n-1)]
-    edges = edges + start_node_edges
+    edges = edges + [(n_nodes, i, {'weight': 0}) for i in range(n_nodes)]
 
     # Initialize node distances and predecessors
-    d = np.ones(n) * np.inf
-    d[n - 1] = 0  # Starting node has zero distance
+    distance= np.ones(n) * np.inf
+    distance[n_nodes] = 0  # Starting node has zero distance
     p = np.ones(n) * -1
 
     # Relax n times
     for i in range(n):  
         x = -1
-        for e in edges:
-            if d[int(e[0])] + e[2]['weight'] < d[int(e[1])]:
-                d[int(e[1])] = d[int(e[0])] + e[2]['weight']
-                p[int(e[1])] = int(e[0])
-                x = int(e[1])
+        for edge in edges:
+            if distance[int(edge[0])] + edge[2]['weight'] < distance[int(edge[1])]:
+                distance[int(edge[1])] = distance[int(edge[0])] + edge[2]['weight']
+                p[int(edge[1])] = int(edge[0])
+                x = int(edge[1])
         if x == -1:  # If no relaxation possible, no negative cycle
             return None
         
