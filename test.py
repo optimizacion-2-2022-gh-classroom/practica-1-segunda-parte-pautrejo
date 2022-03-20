@@ -22,7 +22,7 @@ class Pruebas(unittest.TestCase):
         G = nx.DiGraph()        
         G.add_weighted_edges_from(edges)
         # Método implementado
-        list_path, len_short_path = bf_negative_cycle_test(G)
+        list_path = bf_negative_cycle(G)
         # Paquete bellmanford
         result = bf.bellman_ford(G, source="5", target="6")
         r = [int(x) for x in result[1]]
@@ -51,9 +51,9 @@ class Pruebas(unittest.TestCase):
         path_more_short = n_nodes - 1
         
         # Método implementado
-        list_path, len_short_path = bf_negative_cycle_test(G)
+        list_path = bf_negative_cycle(G)
         
-        G.add_weighted_edges_from(edges)
+        len_short_path = len(list_path)
         
         self.assertTrue(len_short_path <= path_more_short) 
         
