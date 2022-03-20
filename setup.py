@@ -14,7 +14,7 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     install_requires=[
-        'numpy>=1.21.5'
+        'numpy>=1.19.2'
         ],
-    python_requires=">=3.8.1",
+    python_requires=">=3.7.12",
 )
