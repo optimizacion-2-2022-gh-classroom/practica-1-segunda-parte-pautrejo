@@ -1,6 +1,6 @@
-numpy
-pandas
-networkx
-bellmanford
+numpy==1.22.0
+pandas==1.1.2
+networkx==2.6.3
+bellmanford==0.2.1
 matplotlib
 watermark
