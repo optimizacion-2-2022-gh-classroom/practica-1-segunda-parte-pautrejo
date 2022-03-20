@@ -1,6 +1,6 @@
 import numpy as np 
 
-def bellman_ford(graph):
+def bf_negative_cycle(graph):
     """
     Description
     -------
