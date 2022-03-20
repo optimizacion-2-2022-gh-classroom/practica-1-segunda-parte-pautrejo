@@ -58,7 +58,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 # Comando de docker
 
-docker run --rm -v <ruta a mi directorio> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
+* docker run --rm -v \<ruta a mi directorio\> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
  
 Después de correr la imagen de docker en su computadora, podrá acceder el jupiterlab a través de un browser mediante http://localhost:8888
 
