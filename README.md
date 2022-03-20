@@ -58,7 +58,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 # Comando de docker
 
-* docker run --rm -v <ruta a mi directorio>:/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
+docker run --rm -v <ruta a mi directorio> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
  
 Después de correr la imagen de docker en su computadora, podrá acceder el jupiterlab a través de un browser mediante http://localhost:8888
 
@@ -71,6 +71,6 @@ Después de correr la imagen de docker en su computadora, podrá acceder el jupi
 * [Crypto Trading and Arbitrage Identification Strategies](https://nbviewer.org/github/rcroessmann/sharing_public/blob/master/arbitrage_identification.ipynb)
 * [Video Dokerfile: example-docker-image-build-and-push](https://www.youtube.com/watch?v=wv7JGstFgrU&feature=youtu.be)
 * [Dokerfile curso](https://github.com/palmoreck/dockerfiles/blob/master/jupyterlab/optimizacion_2/3.2.8/Dockerfile)
-* [Video Get started with Binder] (https://www.youtube.com/watch?v=owSGVOov9pQ)
-* [ How to share a Jupyter notebook with Binder? ] (https://mybinder.readthedocs.io/en/latest/introduction.html)
+* [Video Get started with Binder](https://www.youtube.com/watch?v=owSGVOov9pQ)
+* [ How to share a Jupyter notebook with Binder? ](https://mybinder.readthedocs.io/en/latest/introduction.html)
 * [Pseudo código](https://www.simplilearn.com/tutorials/data-structure-tutorial/bellman-ford-algorithm)
