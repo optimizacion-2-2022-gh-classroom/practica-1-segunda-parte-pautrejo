@@ -1,2 +1,4 @@
 *.pyc
 .ipynb_checkpoints
+build/*
+src/bellman_ford.egg-info/*
