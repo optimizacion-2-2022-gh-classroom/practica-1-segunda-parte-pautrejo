@@ -45,7 +45,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 **Nyrma Paulina Hernández Trejo:** Documentación del paquete realizado en Sphinx y publicado con Github Pages.
 
 
-**Joel Jaramillo Pacehco:** Investigar cómo se agrega un boton de binder y su implementación en este repositorio, creación del dockerfile y la imagen correspondiente
+**Joel Jaramillo Pacehco:** Investigar cómo se agrega un boton de binder y su implementación en este repositorio. Creación del dockerfile y la imagen correspondiente agregando el paquete desarrollado.
 
 
 **Aide Jazmín González Cruz:** Investigación de algunas formas de evaluar el correcto funcionamiento del médtodo de Bellman Ford, elaboración de las pruebas unitarias y creaciónn del yaml para correr estos test de forma automática al hacer push sobre el proyecto.
@@ -60,7 +60,9 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 * docker run --rm -v \<ruta a mi directorio\> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1
  
-Después de correr la imagen de docker en su computadora, podrá acceder el jupiterlab a través de un browser mediante http://localhost:8888
+Después de correr la imagen de docker en su computadora, podrá acceder el jupiterlab a través de un browser mediante http://localhost:8888 
+
+La contraseña para ingresar es qwerty
 
 
   
