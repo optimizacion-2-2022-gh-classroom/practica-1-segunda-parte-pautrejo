@@ -25,22 +25,21 @@ def bf_negative_cycle(graph):
 
     n_nodes = len(graph.nodes())
     n = n_nodes + 1
-    # Remove nan edges
+    # Remove nan borders inside graph
     edges = []
     for edge in graph.edges().data():
         if ~np.isnan(edge[2]['weight']):
             edges.append(edge)
 
-    # Add a starting node and add edges with zero weight to all other nodes
+    # Add a start node and add zero weighted edges to all other nodes
     for i in range(n_nodes):
         edges.append((n_nodes, i, {'weight': 0}))
 
-    # Initialize node distances and predecessors
-    distance= np.ones(n) * np.inf
+    # Initialize distances of nodes and predecessors
+    distance= np.ones(n) * np.inf # Starting distances with infinite values
     distance[n_nodes] = 0  # Starting node has zero distance
-    predecessors = np.ones(n) * -1
+    predecessors = np.ones(n) * -1  # Starting predecessors with -1 values
 
-    # Relax n times
     for i in range(n):  
         x = -1
         for edge in edges:
@@ -48,7 +47,7 @@ def bf_negative_cycle(graph):
                 distance[int(edge[1])] = distance[int(edge[0])] + edge[2]['weight']
                 predecessors[int(edge[1])] = int(edge[0])
                 x = int(edge[1])
-        if x == -1:  # If no relaxation possible, no negative cycle
+        if x == -1:  # If relaxation is not possible, there is no negative cycle
             return None
         
     # Identify negative cycle
@@ -62,5 +61,5 @@ def bf_negative_cycle(graph):
             break
         v = predecessors[int(v)]
     
-    cycle.reverse()
+    cycle.reverse() # reverse list
     return cycle
