@@ -57,7 +57,7 @@ Nos reunimos para elegir el proyecto entre los que se habían trabajado y se sel
 
 ### Método númerico implementado
 
-El método de *Bellman Ford* se implemento usando python, el cuál se puede consultar en la ruta [src/bellman_ford/bellman_ford.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/src/bellman_ford/bellman_ford.py). El cual ya se encuentra empaquetado y puede instalarse usando el comando:
+El método de *Bellman Ford* se implemento usando python, el cuál se puede consultar en la ruta [src/bellman_ford/bellman_ford.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/src/bellman_ford/bellman_ford.py). El cual puede instalarse usando el comando:
 
 `pip install git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo`
 
@@ -84,7 +84,7 @@ Para ejecutar el *docker* se usa la siguiente instrucción:
 
 `docker run --rm -v \<ruta a mi directorio\> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1`
 
-donde **<ruta a mi directorio>** deberá sustituirse por la ruta local donde desee clonar este *docker*.
+donde ***\<ruta a mi directorio\>*** deberá sustituirse por la ruta local donde desee clonar este *docker*.
  
 Después de correr la imagen de docker en su computadora, podrá acceder al *jupyterlab* a través de un *browser* usando la siguiente dirección:
 
@@ -94,7 +94,7 @@ Le pedirá una contraseña, que por defaul es ***qwerty***.
 
 ### Tests
 
-Se cuentan con 3 pruebas al método implementado: 2 ejemplos donde se verifica la solución correcta del método y otra que verifica que la solución no sea más grande que los nodos en el grafo, los cuales se pueden ver en el archivo [test.py][https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/test.py]. Y se ejecuta en autómatico cuando se hace un *push* en el repositorio a travéz del [test.yaml](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/.github/workflows/test.yaml)
+Se cuentan con 3 pruebas al método implementado: 2 ejemplos donde se verifica la solución correcta del método y otra que verifica que la solución no sea más grande que los nodos en el grafo, los cuales se pueden ver en el archivo [test.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/test.py). Y se ejecuta en autómatico cuando se hace un *push* en el repositorio a travéz del [test.yaml](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/.github/workflows/test.yaml)
   
 
 # Referencias:
