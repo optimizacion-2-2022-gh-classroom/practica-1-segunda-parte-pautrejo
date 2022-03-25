@@ -6,7 +6,7 @@ import unittest
 
 class Pruebas(unittest.TestCase):
 
-    def test_val_resultado(self):
+    def test_val_resultado_1(self):
         """
         Válida resultados con el método implementado de bellman_ford vs paquete bellmanford
         https://pypi.org/project/bellmanford/
@@ -24,7 +24,30 @@ class Pruebas(unittest.TestCase):
         # Método implementado
         list_path = bf_negative_cycle(G)
         # Paquete bellmanford
-        result = bf.bellman_ford(G, source="5", target="6")
+        result = bf.bellman_ford(G, source="5", target="4")
+        r = [int(x) for x in result[1]]
+        self.assertTrue(list_path == r) 
+
+    def test_val_resultado_2(self):
+        """
+        Válida resultados con el método implementado de bellman_ford vs paquete bellmanford
+        https://pypi.org/project/bellmanford/
+        """
+        edges = [["0", "1", -1],
+         ["0", "2", 4],
+         ["1", "2", 3],
+         ["1", "3", 2],
+         ["1", "4", 2],
+         ["3", "2", 5],
+         ["3", "1", 1],
+         ["3", "3", -3]]
+        
+        G = nx.DiGraph()        
+        G.add_weighted_edges_from(edges)
+        # Método implementado
+        list_path = bf_negative_cycle(G)
+        # Paquete bellmanford
+        result = bf.bellman_ford(G, source="0", target="3")
         r = [int(x) for x in result[1]]
         self.assertTrue(list_path == r) 
 
