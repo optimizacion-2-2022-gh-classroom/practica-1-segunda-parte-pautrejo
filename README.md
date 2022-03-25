@@ -96,6 +96,10 @@ Le pedirá una contraseña, que por defaul es ***qwerty***.
 
 Se cuentan con 3 pruebas al método implementado: 2 ejemplos donde se verifica la solución correcta del método y otra que verifica que la solución no sea más grande que los nodos en el grafo, los cuales se pueden ver en el archivo [test.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/test.py). Y se ejecuta en autómatico cuando se hace un *push* en el repositorio a travéz del [test.yaml](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/.github/workflows/test.yaml)
   
+### AWS
+
+En la carpeta [AWS](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/tree/main/AWS), se encuentran algunas pantallas donde se visualiza como se corre en *docker* y se clona este repositorio en una instancia de *aws*
+  
 
 ## Referencias:
 
