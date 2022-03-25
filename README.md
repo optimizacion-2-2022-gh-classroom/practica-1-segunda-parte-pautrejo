@@ -1,82 +1,114 @@
-**Parte 2 para la práctica 1 del curso de Optimización 2 2021-1: implementación de método numérico para resolver problemas de optimización convexa.**
+# **Parte 2 para la práctica 1 del curso de Optimización 2 2021-1: implementación de método numérico para resolver problemas de optimización convexa.**
 
-Antes de iniciar a trabajar: 
+## Instrucciones: 
 
+Implementar un método numérico que resuelva problemas de optimización convexa de pequeña escala. 
 
-* **Sólo una persona de cada equipo debe darle click a la liga** que está indicada en la publicación de canvas. Una vez que le dé click a la liga tal persona **invite** a sus integrantes de su equipo como **Admin**. Para invitar a su integrante ir dentro del repo a Settings -> Manage Access y enviar la invitación ingresando user de github de su integrante.
-    
+## Descripción: 
 
-# Instrucciones
+En está práctica se implementa el algoritmo de [Bellman Ford](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm), el cual consiste en encontrar la distancia más corta desde un nodo origen especificado, hasta todos los demás nodos del grafo, es capaz de manejar gráficos en los que algunos de los pesos de los bordes son números negativos, a diferencia del método [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) que sólo trabaja con ponderaciones positivas.
 
-Se encuentran en el archivo [instrucciones.ipynb](instrucciones.ipynb).
+## Divisón del equipo
 
-Usen `git` para llevar la historia de cambios en la realización de sus notebooks o cualquier otro archivo y subirlos a sus repos. No se revisarán aquellos archivos que tengan un commit con todas las respuestas. El trabajo es incremental.
+| User| Equipo | Tareas | Roles | 
+|:---:|:---:|:---:|:---:|
+| jesusmb230795| Programming| Método de pequeña escala| Programer/Reviewer |
+| pautrejo| Programming, Project Manager| Documentación del paquete| Programer/Reviewer |
+| joelitam2021| Programming| Docker y botón de binder| Programer/Reviewer |
+| AideJGC| Programming| Test | Programer/Reviewer| 
 
-**Deben usar la funcionalidad de github**: *issues*, *milestones*, *projects*, *reviewers*, *asignees* o lo que ustedes consideren de github que les ayudará a comunicarse/organizarse (no tienen que usar todas las funcionalidades anteriores y cada equipo decide qué usar). Ver por [ejemplo video para crear proyectos en github](https://youtu.be/z4Xpif7HI04).
+## Trabajo: 
 
-# Dinámica
+### Resúmen
 
-Dividir a su equipo para realizar tres tareas. **Ustedes deciden qué integrante resuelve qué tarea**:
+Para la presente práctica se resolvieron los siguientes *issues* 
 
-1. 2 personas que programen el método numérico elegido y elijan los ejemplos para los *tests*.
+- 1. Implementación del método numérico en Python
 
-2. 1 persona que apoye en la construcción de los *github workflows* (*build & push* de la imagen de docker y *tests*) y realice la documentación del paquete.
+- 2. Crear paquete que implemente método.
 
-3. 1 persona que sea *project manager* (más detalles de este rol en las notas). Que apoye en la búsqueda de ejemplos y/o documentación para las tareas anteriores. Que cree el botón de *binder*. Que publique la documentación del paquete *online*. Que levante la instancia de AWS.
+- 3. Crear documentación del paquete con Sphinx
 
-Entre todos los y las integrantes tienen que dar *feedback* si es necesario en la resolución de las tareas que haya duda entre ustedes. El *feedback* consiste en resolver/explicar las dudas que existan. **Las personas asignadas a la tarea correspondiente son las que realizan los *commits* una vez resueltas las dudas**.
+- 4. Botón de Binder para probar paquete desde repo
 
-Los puntos 1, 2 y 3 anteriores los realizan de forma iterativa hasta finalizar las tareas y que estén en acuerdo las y los integrantes de cada equipo con las soluciones.
+- 5. Dockerfile e imagen de docker
 
-# Lenguajes de programación
+- 6. Tests método numérico
+ 
+### Equipo
+ 
+Nos reunimos para elegir el proyecto entre los que se habían trabajado y se seleccionó el método númerico a implementar. Así mismo, se dividieron las tareas a realizar.
 
-Ustedes eligen el lenguaje de programación a usar. La sugerencia es *Python3*.
+### Individual
 
-# Calificación
-
-La calificación de esta segunda parte es la mitad de la práctica 1. Se asgina una calificación individual por tarea asignada y una calificación por equipo. Se calificará de acuerdo a los *commits* realizados y a los avances que realizan en su trabajo incremental. 
-
-# AWS
-
-Adjunten *screenshots* en un directorio de su repo para mostrar su uso de AWS, debe aparecer en el *screenshot* su nombre, clave única u otra forma de identificar su trabajo. El trabajo en la nube consiste en probar las ejecuciones de su paquete.
-
-Todas las personas del equipo conocen cómo levantar, configurar instancias de AWS y desplegar servicios allí. Uds elijan a una persona que sea la encargada de realizar lo anterior.
-
-# Notas
-
-* **Para la entrega crear un archivo con nombre:** `reporte_equipo_<aquí colocar_número>_parte_2_practica_1.ipynb` y contiene ejecución del paquete para los ejemplos elegidos.
-
-* Renombren este archivo `README.md` por `old_README.md` para que guarden su contenido y creen otro `README.md` donde escriban sus referencias y lo que realizará/realizó cada integrante.
-
-* *Project manager*: es la persona más importante para el éxito del proyecto. Conoce el/los objetivo(s) a resolver, detalla las tareas que realizarán el grupo de programación y el grupo de revisión (creación de *tests* en nuestro caso), organiza y asigna a personas a ambos grupos, crea tarjetas en el [project board de github](https://help.github.com/en/github/managing-your-work-on-github/creating-a-project-board) y [milestones](https://help.github.com/en/github/managing-your-work-on-github/tracking-the-progress-of-your-work-with-milestones) para dar seguimiento a [issues](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue). Mantiene un contacto directo con el prof para dudas que tengan y para avisar en qué fase se encuentran. Les explica a su equipo de trabajo la correcta creación de *issues*, solución de los mismos y el uso de *milestones* y del *project board*.
-
-* La división de las tareas y roles está está inspirada en el *framework* [scrum](https://www.youtube.com/watch?v=b02ZkndLk1Y&feature=emb_logo) en un ambiente laboral real (y en esta práctica estamos super-simplificando tal *framework*).
-
-* Añadan referencias utilizadas para su trabajo en su `README.md`.
-
-* **Los commits deben tener un mensaje explicatorio, no hacer lo siguiente:**
-
-```
-git commit -m "create 1" -i archivo1.txt
-
-git commit -m "update 1" -i archivo1.txt #qué es update 1?
-
-git commit -m "update 2" -i archivo1.txt #qué es update 2?
-
-git commit -m "update 3" -i archivo1.txt #qué es update 3?
-```
-
-**así también para los *issues*, *projects*, *milestones*...**
-
-* Esta organización es nuestro *playground* utilicen los repos de aquí para practicar :)
-
-* Recuerden:
-
-    * ir guardando su trabajo si usan binder y usar `git` para llevar la historia de sus cambios en sus repos :)
-    * poner las referencias que utilizan (aún si le preguntan a una compañera o compañero de la clase coloquen esto en su entrega) pues no está permitido copiar y escribir que lo hicieron sin citar sus fuentes.
+**Jesús Enrique Miranda Blanco:** Implementación del método numérico y creación del paquete que implementa el método.
 
 
-* Para dudas creen un *room* de gitter e ínvitenme :) (si ya lo hicieron omitan este enunciado)
+**Nyrma Paulina Hernández Trejo:** Documentación del paquete realizado en Sphinx y publicado con Github Pages.
 
-* **Su trabajo individual y su tiempo es muy valioso e importante, también el trabajo en equipo. Si alguna persona del equipo no realizó su tarea asignada, esperaría que lo resolvieran entre ustedes, si no lo resuelven avísenme y no realicen su tarea asignada. Si tienen algún problema (familiar, salud,...) infórmenme con tiempo para ver qué podemos hacer :)**
 
+**Joel Jaramillo Pacehco:** Investigar cómo se agrega un boton de binder y su implementación en este repositorio. Creación del dockerfile y la imagen correspondiente agregando el paquete desarrollado.
+
+
+**Aide Jazmín González Cruz:** Investigación de algunas formas de evaluar el correcto funcionamiento del médtodo de Bellman Ford, elaboración de las pruebas unitarias y creación del yaml para correr estos test de forma automática al hacer push sobre el proyecto. Corrida del Docker y clonar repo en AWS.
+
+
+## Contenido:
+
+### Método númerico implementado
+
+El método de *Bellman Ford* se implemento usando python, el cuál se puede consultar en la ruta [src/bellman_ford/bellman_ford.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/src/bellman_ford/bellman_ford.py). El cual puede instalarse usando el comando:
+
+`pip install git+https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo`
+
+
+### Documentación
+
+Para conocer más acerca del método implementado se creó la siguiente documentación usando el paquete de [sphinx](https://www.sphinx-doc.org/en/master/)
+
+* [Welcome to Bellman Ford Method’s documentation!](https://optimizacion-2-2022-gh-classroom.github.io/practica-1-segunda-parte-pautrejo/html/index.html)
+
+
+### Bóton binder
+
+Se cuenta con la opción de correr el paquete usando la herramienta de *Binder*
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/main) 
+
+
+### Docker
+
+Así mismo se cuenta con una imagen de *docker* que contiene preisntalado el paquete creado para ejecutar el método de *Bellman Ford*, y el en este link se puede ver el [Dockerfile](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/dockerfiles/pkg/Dockerfile)
+
+Para ejecutar el *docker* se usa la siguiente instrucción:
+
+`docker run --rm -v \<ruta a mi directorio\> :/datos --name jupyterlab_practica2 -p 8888:8888 -d joelitam2021/pkg_optimizacion:0.1`
+
+donde ***\<ruta a mi directorio\>*** deberá sustituirse por la ruta local donde desee clonar este *docker*.
+ 
+Después de correr la imagen de docker en su computadora, podrá acceder al *jupyterlab* a través de un *browser* usando la siguiente dirección:
+
+`http://localhost:8888`
+
+Le pedirá una contraseña, que por defaul es ***qwerty***.
+
+### Tests
+
+Se cuentan con 3 pruebas al método implementado: 2 ejemplos donde se verifica la solución correcta del método y otra que verifica que la solución no sea más grande que los nodos en el grafo, los cuales se pueden ver en el archivo [test.py](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/test.py). Y se ejecuta en autómatico cuando se hace un *push* en el repositorio a travéz del [test.yaml](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/blob/main/.github/workflows/test.yaml)
+  
+### AWS
+
+En la carpeta [AWS](https://github.com/optimizacion-2-2022-gh-classroom/practica-1-segunda-parte-pautrejo/tree/main/AWS), se encuentran algunas pantallas donde se visualiza como se corre en *docker* y se clona este repositorio en una instancia de *aws*
+  
+
+## Referencias:
+
+
+* [Crypto Trading and Arbitrage Identification Strategies](https://nbviewer.org/github/rcroessmann/sharing_public/blob/master/arbitrage_identification.ipynb)
+* [Video Dokerfile: example-docker-image-build-and-push](https://www.youtube.com/watch?v=wv7JGstFgrU&feature=youtu.be)
+* [Dokerfile curso](https://github.com/palmoreck/dockerfiles/blob/master/jupyterlab/optimizacion_2/3.2.8/Dockerfile)
+* [Video Get started with Binder](https://www.youtube.com/watch?v=owSGVOov9pQ)
+* [How to share a Jupyter notebook with Binder?](https://mybinder.readthedocs.io/en/latest/introduction.html)
+* [Pseudo código](https://www.simplilearn.com/tutorials/data-structure-tutorial/bellman-ford-algorithm)
+* [Sphinx](https://www.sphinx-doc.org/en/master/)
+* [Test case iterations Bellman Ford](https://codeforces.com/blog/entry/81979?locale=en)
